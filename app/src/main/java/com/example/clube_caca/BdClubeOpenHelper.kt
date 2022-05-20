@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class BdClubeHelper(context: Context?)
+class BdClubeOpenHelper(context: Context?)
     : SQLiteOpenHelper(context, NOME_BASE_DADOS, null, VERSAO_BASE_DADOS){
     /**
      * Called when the database is created for the first time. This is where the
@@ -15,8 +15,9 @@ class BdClubeHelper(context: Context?)
     override fun onCreate(db: SQLiteDatabase?) {
         if (db != null) {
             TabelaRegiao(db).cria()
-            TabelaEquipas(db).cria()
-            TabelaAnimais(db).cria() // Está a apresentar erros nos testes.
+            /*TabelaEquipas(db).cria()
+            TabelaAnimais(db).cria() // Está a apresentar erros nos testes.*/
+            TabelaCaca(db).cria()
         }
     }
 
